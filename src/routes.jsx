@@ -1,5 +1,5 @@
 
-// Aula sobre router.
+// Aula sobre router 2025.1
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Inicio from './paginas/Inicio';
@@ -7,6 +7,8 @@ import SobreMim from './paginas/SobreMim';
 import Menu from "./componentes/Menu";
 import Rodape from "./componentes/Rodape";
 import PaginaPadrao from "./componentes/PaginaPadrao";
+import Postagem from "./paginas/Postagem";
+import NaoEncontrada from "./paginas/NaoEncontrada";
 
 function AppRoutes() {
 
@@ -23,10 +25,11 @@ function AppRoutes() {
 
                     <Route path="/" element={<Inicio />} />
                     <Route path="/sobremim" element={<SobreMim />} />
+                    <Route path="/posts/:id" element={<Postagem />} />
 
                 </Route>
 
-                <Route path="*" element={<h1>Página não encontrada!</h1>} />
+                <Route path="*" element={<NaoEncontrada />} />
 
             </Routes>
 
@@ -34,8 +37,7 @@ function AppRoutes() {
             <Rodape />
 
         </BrowserRouter>
-
-    )
+    );
 }
 
 export default AppRoutes;
